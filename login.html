@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width" name="viewport">
+        <meta content="telephone=no" name="format-detection">
+        <meta content="email=no" name="format-detection">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <link rel="stylesheet" href="css/style.css" />
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/fastclick.js"></script>
+        <script>
+            window.addEventListener('load', function () {   //消除手机端click事件0.3秒延迟
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+        <style>  
+        input.watermark {
+            color: #999;
+        }
+        .input_login {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            font-size: 0.3rem;
+            padding: 0.05rem;
+            width: 100%;
+            border: 1px solid #D7D7D7;
+        }
+
+
+        .btn_login {
+            font-size: 0.3rem;
+            color: #FFF;
+            background-color: #36B5F8;
+            /*padding-right: 20px;
+                padding-left: 20px;*/
+            border-top-style: none;
+            border-right-style: none;
+            border-bottom-style: none;
+            border-left-style: none;
+            padding:  0.05rem 0;
+            width: 100%;
+            cursor: pointer;
+        }
+
+            .btn_login:hover,
+            .btn_login:focus {
+                text-decoration: none;
+                background-color: #09A4F7;
+            }
+
+            .btn_login:active,
+            .btn_login.active {
+                background-image: none;
+                outline: 0;
+                -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+                box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            }
+
+            .btn_login:disabled {
+                text-decoration: none;
+                background-color: #CCCCCC;
+            }
+
+        .btn_register {
+            color: #F16777;
+            font-size: 0.3rem;
+            background-color: white;
+            border: 1px solid #F16777;
+            padding: 0.05rem 0;
+            width: 100%;
+            cursor: pointer;
+        }
+
+            .btn_register:hover,
+            .btn_register:focus {
+                color: white;
+                text-decoration: none;
+                background-color: #F16777;
+            }
+
+            .btn_register:active,
+            .btn_register.active {
+                background-image: none;
+                outline: 0;
+                -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+                box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            }
+
+            .btn_register:disabled {
+                text-decoration: none;
+                background-color: #CCCCCC;
+            }
+
+        #divLoginContent {
+            bottom: 0px;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            position: absolute;
+            /*background-image: url(Images/login_bg2.jpg);*/
+            /*background-repeat: no-repeat;*/
+            /*background-position: left center;*/
+            /*background-color: #808080;*/
+        }
+
+        #divLoginAreaContainer {
+            /*color: white;*/
+            background-color: white;
+            width: 100%;
+            position: absolute;
+            top: 15%;
+            /* margin-top: -150px; */
+            /* left: 50%; */
+            /* margin-left: -200px; */
+            z-index: 13;
+        }
+
+        </style>
+</head>
+<body>
+    
+        <div id="divLoginContent">
+                <div id="divLoginAreaContainer">
+                    <div id="divLoginArea">
+                        <form id="form">
+                            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td valign="top">
+                                        <div style="margin: 0.45rem;">
+                                            <div style="color:#36B5F8;font-size:0.3rem;">升讯威周报系统 2.0</div>
+                                            <div style="margin-top:0.35rem;">
+                                                <input name="txtAccount" type="text" class="input_login" id="txtAccount" keyenter=keyenter />
+                                            </div>
+                                            <div style="margin-top:0.17rem;">
+                                                <input name="txtPassword" type="text" class="input_login" id="txtPassword" keyenter=keyenter />
+                                            </div>
+                                            <div style="margin-top:0.17rem;">
+                                                <div style="float:left">
+                                                    <input name="" id="chkRememberAccount" type="checkbox" value="" />
+                                                    <label for="chkRememberAccount">记住帐户</label>
+                                                </div>
+                                                <div style="float:left; margin-left:0.45rem;">
+                                                    <input name="" id="chkRememberPassword" type="checkbox" value="" />
+                                                    <label for="chkRememberPassword">自动登录</label>
+                                                </div>
+                                                <div style="float:right; margin-left:0.45rem;">
+                                                    <a href="/Home/ResetPassword" style="color:black">找回密码</a>
+                                                </div>
+                                                <div style="clear:both"></div>
+                                            </div>
+                                            <div style="margin-top:0.35rem;">
+                                                <input name="btnLogin" type="button" class="btn_login" id="btnLogin" value="登 录" onclick="onLogin()" />
+                                            </div>
+                                            <div style="margin-top:0.35rem;">
+                                                <input name="btnLogin" type="button" class="btn_register"  value="免 费 注 册" onclick="register()" />
+                                            </div>
+                                            <div style="margin-top:0.35rem;text-align:right">
+                                                <a href="http://blog.shengxunwei.com/Home/Post/0a5950ef-22bd-4e00-9f49-65d1ca82d81b" target="_blank" style="color:black">点击查看使用说明书</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        
+</body>
+</html>

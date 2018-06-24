@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script>
+        window.addEventListener('load', function () {   //消除手机端click事件0.3秒延迟
+            FastClick.attach(document.body);
+        }, false);
+    </script>
+</head>
+
+<body>
+    <div class="modalContent">
+        <div class="content native-scroll">
+            <div class="list-block">
+                <ul>
+                    <!-- Text inputs -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">项目名称</div>
+                                <div class="item-input">
+                                    <select>
+                                        <option>项目一</option>
+                                        <option>项目二</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">子项目</div>
+                                <div class="item-input">
+                                    <select>
+                                        <option>子项目一</option>
+                                        <option>子项目二</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">完成情况</div>
+                                <div class="item-input">
+                                    <select>
+                                        <option>未开始</option>
+                                        <option>进行中</option>
+                                        <option>已完成</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Date -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">日期</div>
+                                <div class="item-input">
+                                    <input type="date" placeholder="Birth day" value="2014-04-30">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="align-top">
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">工作内容</div>
+                                <div class="item-input">
+                                    <textarea></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <a href="#" class="button button-big button-fill button-danger">取消</a>
+                <a href="#" class="button button-big button-fill button-success">确定</a>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
