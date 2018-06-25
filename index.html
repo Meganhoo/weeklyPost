@@ -25,12 +25,14 @@
             <div class="companyName">
                 <h1>测试公司名称</h1>
             </div>
-            <div class="userDiv"><img src="image/mun_1.png" alt="xx"></div>
+            <div class="userDiv">
+                <img src="image/mun_1.png" alt="xx">
+            </div>
             <div class="userDiv">
                 <span>用户名</span>
             </div>
         </div>
-        <div class="main-content" >
+        <div class="main-content">
             <div class="content-tab">
                 <ul id="" class="tabContainer">
                     <li onclick="switchTab(this)" class="tab_selected">
@@ -48,11 +50,11 @@
                 <!-- 填写 -->
                 <div id="1" class="content-text" style="display: block;">
                     <div class="content-select">
-                        <select name="" id="">
+                        <select name="" id="" class="selectyear">
                             <option value="1">2016</option>
-                            <option value="1">2017</option>
-                            <option value="1">2018</option>
-                            <option value="1">2019</option>
+                            <option value="2">2017</option>
+                            <option value="3">2018</option>
+                            <option value="4">2019</option>
                         </select>
                         <select name="" id="">
                             <option value="1">5</option>
@@ -73,11 +75,11 @@
                             <div>
                                 <button class="button-info button-small" onclick="addContentFunc()">提交</button>
                                 <button class="button-success button-small" onclick="addContentFunc()">新增</button>
-                               
+
                             </div>
                             <div style="clear: both;"></div>
                         </div>
-                       
+
                         <div class="content-tr-card">
                             <ul>
                                 <li>
@@ -102,9 +104,9 @@
                                 </li>
                             </ul>
                             <div class="content-tr-card-button">
-                                <button class="button-danger button-small"  onclick="deletContentFunc()">删除</button>
+                                <button class="button-danger button-small" onclick="deletContentFunc()">删除</button>
                                 <button class="button-success button-small" onclick="editContentFunc()">编辑</button>
-                               
+
                             </div>
                             <div style="clear: both;"></div>
                         </div>
@@ -113,142 +115,518 @@
                 </div>
                 <!-- 查询 -->
                 <div id="2" class="content-text">
-                        <div class="content-select">
-                            <label for="">查询方式</label>
-                                <select name="" id="">
-                                    <option value="0">个人</option>
-                                    <option value="1">组织架构</option>
-                                    <option value="2">项目(周)</option>
-                                    <option value="3">项目(时间段)</option>
+                    <div class="content-select">
+                        <label for="">查询方式</label>
+                        <select name="searchWay" id="searchWay">
+                            <option value="partOne" selected>个人</option>
+                            <option value="partTwo">组织架构</option>
+                            <option value="partThree">项目(周)</option>
+                            <option value="partFour">项目(时间段)</option>
+                        </select>
+                    </div>
+                    <div class="content-body" id="partOne" style="display: block;">
+                        <div class="search-input">
+                            <div>
+                                <label for="">人员</label>
+                                <input type="text" disabled>
+                                <div class="inputSelect">
+                                    <span href="javascript:void(0)" onclick="selectUser('CreationUser')">选择</span>
+                                    <span href="javascript:void(0)" onclick="clearSelectedUser('CreationUser')">清除</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="">时间</label>
+                                <select name="" id=""  class="selectyear">
+                                    <option value="1">2016</option>
+                                    <option value="2">2017</option>
+                                    <option value="3">2018</option>
+                                    <option value="4">2019</option>
                                 </select>
+                                <select name="" id="">
+                                    <option value="1">5</option>
+                                    <option value="1">6</option>
+                                    <option value="1">7</option>
+                                    <option value="1">8</option>
+                                </select>
+                                <label for="">至</label>
+                                <select name="" id="">
+                                    <option value="1">2016</option>
+                                    <option value="1">2017</option>
+                                    <option value="1">2018</option>
+                                    <option value="1">2019</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="1">5</option>
+                                    <option value="1">6</option>
+                                    <option value="1">7</option>
+                                    <option value="1">8</option>
+                                </select>
+                               
+                            </div>
+                            <div class="buttonRow">
+                                    <button class=" button-small button-success">查询</button>
+                                    <button class=" button-small button-info" onclick="cancelModalFunc()">下载</button>
+                                </div>
                         </div>
-                        <div class="content-body">
+
+                        <div class="content-tr">
+                            <div class="content-tr-title">
+                                <span>06/18 - 06/24（本周）</span>
+                                <div class="fl-r">
+                                   <input type="checkbox">  全选
+                                </div>
+                                <div style="clear: both;"></div>
+                            </div>
+
+                            <div class="content-tr-card">
+                                    <div class="fl-r">
+                                            <input type="checkbox">
+                                         </div>
+                                         <div style="clear: both;"></div>
+                                <ul>
+                                    <li>
+                                        <div>项目名称:</div>
+                                        <div>测试项目名称</div>
+                                    </li>
+                                    <li>
+                                        <div>子项目:</div>
+                                        <div>测试项目名称</div>
+                                    </li>
+                                    <li>
+                                        <div>完成情况:</div>
+                                        <div>测试项目名称</div>
+                                    </li>
+                                    <li>
+                                        <div>日期:</div>
+                                        <div>测试项目名称</div>
+                                    </li>
+                                    <li>
+                                        <div>内容:</div>
+                                        <div>测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称</div>
+                                    </li>
+                                </ul>
+                               
+                            </div>
+
                         </div>
+                    </div>
+                    <div class="content-body" id="partTwo">
+                        <div class="search-input">
+                            <div>
+                                <label for="">组织架构</label>
+                                <input type="text" disabled>
+                                <div class="inputSelect">
+                                    <span href="javascript:void(0)" onclick="selectUser('CreationUser')">选择</span>
+                                    <span href="javascript:void(0)" onclick="clearSelectedUser('CreationUser')">清除</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="">查询方式</label>
+                                <select name="" id="">
+                                    <option value="1">查询当前组织机构及下级组织机构</option>
+                                    <option value="1">仅查询当前组织机构</option>
+                                </select>
+                               
+                            </div>
+                            <div class="buttonRow">
+                                    <button class=" button-small button-success">查询</button>
+                                    <button class=" button-small button-info" onclick="cancelModalFunc()">下载</button>
+                            </div>
+                          
+                        </div>
+                        <div class="content-select">
+                            <select name="" id="">
+                                <option value="1">2016</option>
+                                <option value="1">2017</option>
+                                <option value="1">2018</option>
+                                <option value="1">2019</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="1">5</option>
+                                <option value="1">6</option>
+                                <option value="1">7</option>
+                                <option value="1">8</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="1">05/28-06/03</option>
+                                <option value="1">05/18-06/03</option>
+                                <option value="1">05/08-06/03</option>
+                                <option value="1">05/38-06/03</option>
+                            </select>
+                        </div>
+                        <div class="content-tr">
+                            <div class="content-tr-title">
+                                <span>测试1 - 胡伟</span>
+                                <div class="fl-r">
+                                        <input type="checkbox">  全选
+                                     </div>
+                                     <div style="clear: both;"></div>
+                            </div>
+                            <div class="content-tr-card">
+                                    <div class="fl-r">
+                                            <input type="checkbox">
+                                         </div>
+                                         <div style="clear: both;"></div>
+                                <ul>
+                                    <li>
+                                        <div>项目名称:</div>
+                                        <div>测试项目名称</div>
+                                    </li>
+                                    <li>
+                                        <div>子项目:</div>
+                                        <div>测试项目名称</div>
+                                    </li>
+                                    <li>
+                                        <div>完成情况:</div>
+                                        <div>测试项目名称</div>
+                                    </li>
+                                    <li>
+                                        <div>日期:</div>
+                                        <div>测试项目名称</div>
+                                    </li>
+                                    <li>
+                                        <div>内容:</div>
+                                        <div>测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称</div>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="content-body" id="partThree">
+                        <div class="search-input">
+                            <div>
+                                <label class="labelWidth">项目</label>
+                                <select name="" id="">
+                                    <option value="1">日常工作</option>
+                                    <option value="1">测试效果</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="labelWidth">子项目</label>
+                                <select name="" id="">
+                                    <option value="1">全部</option>
+                                    <option value="1">场外巡检</option>
+                                </select>
+                               
+                            </div>
+                            <div class="buttonRow">
+                                    <button class=" button-small button-success">查询</button>
+                                    <button class=" button-small button-info" onclick="cancelModalFunc()">下载</button>
+                            </div>
+                        </div>
+                        <div class="content-select">
+                            <select name="" id="">
+                                <option value="1">2016</option>
+                                <option value="1">2017</option>
+                                <option value="1">2018</option>
+                                <option value="1">2019</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="1">5</option>
+                                <option value="1">6</option>
+                                <option value="1">7</option>
+                                <option value="1">8</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="1">05/28-06/03</option>
+                                <option value="1">05/18-06/03</option>
+                                <option value="1">05/08-06/03</option>
+                                <option value="1">05/38-06/03</option>
+                            </select>
+                        </div>
+                        <div class="content-tr">
+                            <div class="content-tr-title">
+                                <span>测试1 - 胡伟</span>
+                                <div class="fl-r">
+                                        <input type="checkbox">  全选
+                                     </div>
+                                     <div style="clear: both;"></div>
+                            </div>
+                            <div class="content-tr-card">
+                                    <div class="fl-r">
+                                            <input type="checkbox">
+                                         </div>
+                                         <div style="clear: both;"></div>
+                                <ul>
+                                    <li>
+                                        <div>项目名称:</div>
+                                        <div>测试项目名称</div>
+                                    </li>
+                                    <li>
+                                        <div>子项目:</div>
+                                        <div>测试项目名称</div>
+                                    </li>
+                                    <li>
+                                        <div>完成情况:</div>
+                                        <div>测试项目名称</div>
+                                    </li>
+                                    <li>
+                                        <div>日期:</div>
+                                        <div>测试项目名称</div>
+                                    </li>
+                                    <li>
+                                        <div>内容:</div>
+                                        <div>测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称</div>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="content-body" id="partFour">
+                        <div class="search-input">
+                            <div>
+                                <label class="labelWidth">项目</label>
+                                <select name="" id="">
+                                    <option value="1">日常工作</option>
+                                    <option value="1">测试效果1</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="labelWidth">子项目</label>
+                                <select name="" id="">
+                                    <option value="1">全部</option>
+                                    <option value="1">场外巡检</option>
+                                </select>
+                               
+                            </div>
+                            <div>
+                                <label class="labelWidth">时间</label>
+                                <select name="" id="">
+                                    <option value="1">2016</option>
+                                    <option value="1">2017</option>
+                                    <option value="1">2018</option>
+                                    <option value="1">2019</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="1">5</option>
+                                    <option value="1">6</option>
+                                    <option value="1">7</option>
+                                    <option value="1">8</option>
+                                </select>
+                                <label for="">至</label>
+                                <select name="" id="">
+                                    <option value="1">2016</option>
+                                    <option value="1">2017</option>
+                                    <option value="1">2018</option>
+                                    <option value="1">2019</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="1">5</option>
+                                    <option value="1">6</option>
+                                    <option value="1">7</option>
+                                    <option value="1">8</option>
+                                </select>
+                            </div>
+                            <div class="buttonRow">
+                                    <button class=" button-small button-success">查询</button>
+                                    <button class=" button-small button-info" onclick="cancelModalFunc()">下载</button>
+                            </div>
+
+                        </div>
+                        <div class="content-select">
+                            <select name="" id="">
+                                <option value="1">05/28-06/03</option>
+                                <option value="1">05/18-06/03</option>
+                                <option value="1">05/08-06/03</option>
+                                <option value="1">05/38-06/03</option>
+                            </select>
+                        </div>
+                        <div class="content-tr">
+                            <div class="content-tr-title">
+                                <span>胡伟1 - 胡伟</span>
+                                <div class="fl-r">
+                                        <input type="checkbox">  全选
+                                     </div>
+                                     <div style="clear: both;"></div>
+                                
+                            </div>
+
+                            <div class="content-tr-card">
+                                    <div class="fl-r">
+                                            <input type="checkbox">
+                                         </div>
+                                         <div style="clear: both;"></div>
+                                <ul>
+                                    <li>
+                                        <div>项目名称:</div>
+                                        <div>测试项目名称</div>
+                                    </li>
+                                    <li>
+                                        <div>子项目:</div>
+                                        <div>测试项目名称</div>
+                                    </li>
+                                    <li>
+                                        <div>完成情况:</div>
+                                        <div>测试项目名称</div>
+                                    </li>
+                                    <li>
+                                        <div>日期:</div>
+                                        <div>测试项目名称</div>
+                                    </li>
+                                    <li>
+                                        <div>内容:</div>
+                                        <div>测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称测试项目名称</div>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>
 
                 </div>
                 <!-- 考核 -->
                 <div id="3" class="content-text">
-                        sssss
+                    sssss
                 </div>
             </div>
         </div>
         <!-- 菜单 -->
         <div class="panel" style="display: none;">
-                <div class="content-block">
-                  <ul >
-                      <li class="active"><a href="#">周报</a></li>
-                      <li><a href="#">统计</a></li>
-                      <li><a href="#">修改密码</a></li>
-                      <li><a href="#">退出登录</a></li>
-                      <li><a id="closePanel">关闭</a></li>
-                  </ul>
-                  <!-- Click on link with "close-panel" class will close panel -->
-                 
-                </div>
+            <div class="content-block">
+                <ul>
+                    <li class="active">
+                        <a href="#">周报</a>
+                    </li>
+                    <li>
+                        <a href="#">统计</a>
+                    </li>
+                    <li>
+                        <a href="#">修改密码</a>
+                    </li>
+                    <li>
+                        <a href="#">退出登录</a>
+                    </li>
+                    <li>
+                        <a id="closePanel">关闭</a>
+                    </li>
+                </ul>
+                <!-- Click on link with "close-panel" class will close panel -->
+
+            </div>
         </div>
         <!-- 新增/编辑模块 -->
         <div class="modalContent" id="addModal" style="display:none;">
-                <div class="content">
-                        <div class="list-block">
-                          <ul>
-                            <!-- Text inputs -->
-                            <li>
-                              <div class="item-content">
+            <div class="content">
+                <div class="list-block">
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content">
                                 <div class="item-inner">
-                                  <div class="item-title label">项目名称</div>
-                                  <div class="item-input">
-                                    <select>
-                                                <option>项目一</option>
-                                                <option>项目二</option>
-                                    </select>
-                                  </div>
+                                    <div class="item-title label">项目名称</div>
+                                    <div class="item-input">
+                                        <select id="projectList">
+                                            <option>项目一</option>
+                                            <option>项目二</option>
+                                        </select>
+                                    </div>
                                 </div>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="item-content">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
                                 <div class="item-inner">
-                                  <div class="item-title label">子项目</div>
-                                  <div class="item-input">
-                                    <select>
-                                      <option>子项目一</option>
-                                      <option>子项目二</option>
-                                    </select>
-                                  </div>
+                                    <div class="item-title label">子项目</div>
+                                    <div class="item-input">
+                                        <select id="projectTaskList">
+                                            <option>子项目一</option>
+                                            <option>子项目二</option>
+                                        </select>
+                                    </div>
                                 </div>
-                              </div>
-                            </li>
-                            <li>
-                                    <div class="item-content">
-                                      <div class="item-inner">
-                                        <div class="item-title label">完成情况</div>
-                                        <div class="item-input">
-                                          <select>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">完成情况</div>
+                                    <div class="item-input">
+                                        <select id="statusList">
                                             <option>未开始</option>
                                             <option>进行中</option>
                                             <option>已完成</option>
-                                          </select>
-                                        </div>
-                                      </div>
+                                        </select>
                                     </div>
-                                  </li>
-                            <!-- Date -->
-                            <li>
-                              <div class="item-content">
-                                <div class="item-inner">
-                                  <div class="item-title label">日期</div>
-                                  <div class="item-input">
-                                    <input type="date" placeholder="Birth day" value="2014-04-30">
-                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                         
-                            <li class="align-top">
-                              <div class="item-content">
+                            </div>
+                        </li>
+                        <!-- Date -->
+                        <li>
+                            <div class="item-content">
                                 <div class="item-inner">
-                                  <div class="item-title label">工作内容</div>
-                                  <div class="item-input">
-                                    <textarea></textarea>
-                                  </div>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="content-block">
-                                <div class="content-block">
-                                        <button class="button button-danger" onclick="cancelModalFunc()">取消</button>
-                                        <button  class="button button-success">确定</button>
+                                    <div class="item-title label">日期</div>
+                                    <div class="item-input">
+                                        <input type="date" placeholder="Birth day" value="2014-04-30">
                                     </div>
-                        </div>
-                      </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="align-top">
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">工作内容</div>
+                                    <div class="item-input">
+                                        <textarea></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <div class="content-block">
+                        <button class="button button-danger" onclick="cancelModalFunc()">取消</button>
+                        <button class="button button-success">确定</button>
+                    </div>
+                </div>
             </div>
+        </div>
     </div>
 </body>
 <script>
-    $(".userDiv img").click(function(){
-         $(".panel").slideToggle("slow");
-   
+    //菜单下拉显示
+    $(".userDiv img").click(function () {
+        $(".panel").slideToggle("slow");
+
     })
-    $("#closePanel").click(function(){
+    $("#closePanel").click(function () {
         $(".panel").slideUp("slow");
     })
-    $(".content-block ul li").click(function(){
+    $(".content-block ul li").click(function () {
         $(".content-block ul").find("li").removeClass("active");
         $(this).addClass("active");
     })
-    function switchTab(obj){
+    //查询内容显示
+
+    $("#searchWay").change(function () {
+        var partId = $(this).val();
+        $(".content-body").hide();
+        $("#" + partId).show();
+    })
+
+    // tab页
+    function switchTab(obj) {
         var hrefTab = $(obj).find("a");
         $(".tabContainer").find("li").removeClass("tab_selected");
         $(obj).addClass("tab_selected");
         $(".content-text").hide();
         $(hrefTab.attr("href")).show();
     }
-    function addContentFunc(){
+    //显示模态框
+    function addContentFunc() {
         $("#addModal").show();
     }
-    function cancelModalFunc(){
+    //关闭模态框
+    function cancelModalFunc() {
         $("#addModal").hide();
     }
 </script>
