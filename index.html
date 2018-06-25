@@ -25,13 +25,12 @@
             <div class="companyName">
                 <h1>测试公司名称</h1>
             </div>
+            <div class="userDiv"><img src="image/mun_1.png" alt="xx"></div>
             <div class="userDiv">
                 <span>用户名</span>
-                <span>更多</span>
-                <!-- <img src="image/icon_2.png" alt="xx"> -->
             </div>
         </div>
-        <div class="main-content">
+        <div class="main-content" >
             <div class="content-tab">
                 <ul id="" class="tabContainer">
                     <li onclick="switchTab(this)" class="tab_selected">
@@ -134,13 +133,14 @@
                 </div>
             </div>
         </div>
+        <!-- 菜单 -->
         <div class="panel" style="display: none;">
                 <div class="content-block">
                   <ul >
                       <li class="active"><a href="#">周报</a></li>
-                      <li><a>统计</a></li>
-                      <li><a>修改密码</a></li>
-                      <li><a>退出登录</a></li>
+                      <li><a href="#">统计</a></li>
+                      <li><a href="#">修改密码</a></li>
+                      <li><a href="#">退出登录</a></li>
                       <li><a id="closePanel">关闭</a></li>
                   </ul>
                   <!-- Click on link with "close-panel" class will close panel -->
@@ -228,12 +228,16 @@
     </div>
 </body>
 <script>
-    $(".userDiv").click(function(){
+    $(".userDiv img").click(function(){
          $(".panel").slideToggle("slow");
    
     })
     $("#closePanel").click(function(){
         $(".panel").slideUp("slow");
+    })
+    $(".content-block ul li").click(function(){
+        $(".content-block ul").find("li").removeClass("active");
+        $(this).addClass("active");
     })
     function switchTab(obj){
         var hrefTab = $(obj).find("a");
@@ -242,7 +246,6 @@
         $(".content-text").hide();
         $(hrefTab.attr("href")).show();
     }
-
     function addContentFunc(){
         $("#addModal").show();
     }

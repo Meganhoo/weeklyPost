@@ -62,13 +62,21 @@ h1, h2, h3, h4, h5, h6{font-size:100%;font-weight: 500; margin: 0;}
 
 }
 .userDiv{
+	width: auto;
+	height: 100%;
 	float: right;
+	margin-left: 0.1rem;
+}
+.userDiv img{
+	width: 0.3rem;
+	padding-top: 0.16rem;
+	
 }
 /* 左侧菜单 */
   .panel {
     z-index: 1000;
     /* display: none; */
-    background: #808281;
+    /* background: #808281; */
     color: white;
     box-sizing: border-box;
     overflow: auto;
@@ -78,25 +86,38 @@ h1, h2, h3, h4, h5, h6{font-size:100%;font-weight: 500; margin: 0;}
 	top: 0.6rem;
 	right: 0;
     height: auto;
-    -webkit-transform: translate3d(0, 0, 0);
+    /* -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     -webkit-transition: -webkit-transform 400ms;
-            transition: transform 400ms;
+			transition: transform 400ms; */
+			background-color: #fff;
+			background-clip: padding-box;
+			border: 1px solid #cbcbcb;
+			border: 1px solid rgba(0,0,0,.15);
+			border-radius: 0;
+			box-shadow: 0 6px 12px rgba(0,0,0,.175);
   }
   .panel .content-block ul {
 	width: 100%;
 }
  .panel .content-block ul li{
-	 border-bottom: 1px solid;
+	 /* border-bottom: 1px solid; */
 	 text-align: center;
-	 padding: 0.05rem 0;
+	 /* padding: 0.05rem 0; */
+	 /* margin:  0.05rem 0; */
 	 width: 100%;
+	 height: 0.5rem;
  }
  .panel .content-block ul li a{
 	 color: black;
+	 height: 100%;
+	 line-height: 0.5rem;
 }
  .panel .content-block ul li.active a{
-	color: white;
+	/* color: #d8e6ed; */
+	color: #1a4f85;
+    text-decoration: none;
+    background-color: #ddd;
 }
 /* 内容 */
 
@@ -107,7 +128,7 @@ h1, h2, h3, h4, h5, h6{font-size:100%;font-weight: 500; margin: 0;}
 .content-tab{
 	width: 100%;
 	height: 0.5rem;
-	border-bottom: 1px solid;
+	border-bottom: 1px solid #d8e6ed;
 	/* border: 1px solid; */
 	background-color: #fff;
 	margin-bottom: 0.2rem;
