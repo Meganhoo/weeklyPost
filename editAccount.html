@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script>
+        window.addEventListener('load', function () {   //消除手机端click事件0.3秒延迟
+            FastClick.attach(document.body);
+        }, false);
+    </script>
+</head>
+
+<body>
+     <div class="main">
+            <div class="main-header">
+                    <div class="companyName">
+                        <h1>测试公司名称</h1>
+                    </div>
+                    <div class="userDiv">
+                        <img src="image/mun_1.png" alt="xx">
+                    </div>
+                    <div class="userDiv">
+                        <span>用户名</span>
+                    </div>
+                </div>
+                <div class="main-content">
+          
+                        <div class="">
+                                <div class="content native-scroll">
+                                    <div class="list-block">
+                                        <ul>
+                                            <!-- Text inputs -->
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-title label">旧密码</div>
+                                                        <div class="item-input">
+                                                            <input type="password" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-title label">新密码</div>
+                                                        <div class="item-input">
+                                                            <input type="password" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-title label">再次输入新密码：</div>
+                                                        <div class="item-input">
+                                                            <input type="password" name="" id="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                           
+                                        </ul>
+                                    </div>
+                                    <div class="content-block">
+                                        <a href="#" class="button button-big button-fill button-success">保存</a>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+     </div>
+   
+
+</body>
+
+</html>

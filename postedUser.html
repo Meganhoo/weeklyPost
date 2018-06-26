@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>
+    <script>
+        window.addEventListener('load', function () {   //消除手机端click事件0.3秒延迟
+            FastClick.attach(document.body);
+        }, false);
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="main-header">
+            <div class="companyName">
+                <h1>测试公司名称</h1>
+            </div>
+            <div class="userDiv">
+                <img src="image/mun_1.png" alt="xx">
+            </div>
+            <div class="userDiv">
+                <span>用户名</span>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="content-tab">
+                <ul id="" class="tabContainer">
+                    <li onclick="switchTab(this)" class="tab_selected">
+                        <a href="#1">考核</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="search-input">
+                <div>
+                    <label for="">人员</label>
+                    <input type="text" disabled>
+                    <div class="inputSelect">
+                        <span href="javascript:void(0)" onclick="selectUser('CreationUser')">选择</span>
+                        <span href="javascript:void(0)" onclick="clearSelectedUser('CreationUser')">清除</span>
+                    </div>
+                </div>
+                <div class="buttonRow">
+                    <button class=" button-small button-success">查询</button>
+
+                </div>
+            </div>
+            <div class="content-select">
+                <select name="" id="" class="selectyear">
+                    <option value="1">2016</option>
+                    <option value="2">2017</option>
+                    <option value="3">2018</option>
+                    <option value="4">2019</option>
+                </select>
+                <select name="" id="">
+                    <option value="1">5</option>
+                    <option value="1">6</option>
+                    <option value="1">7</option>
+                    <option value="1">8</option>
+                </select>
+                <select name="" id="">
+                    <option value="1">05/28-06/03</option>
+                    <option value="1">05/18-06/03</option>
+                    <option value="1">05/08-06/03</option>
+                    <option value="1">05/38-06/03</option>
+                </select>
+            </div>
+            <div class="content-select">
+                <label for="">查询方式</label>
+                    <select name="searchWay" id="searchWay">
+                        <option value="partOne" selected>已提交</option>
+                        <option value="partTwo">未提交</option>
+                    </select>
+            </div>
+            <div class="content-tr">
+                    <div class="content-tr-card">
+                       <table>
+                           <thead>
+                               <th>姓名</th>
+                               <th>部门</th>
+                           </thead>
+                           <tbody>
+                               <td></td>
+                               <td></td>
+                           </tbody>
+                       </table>
+                       <div>
+                           总数：<span>1</span>
+                       </div>
+                    </div>
+
+                </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

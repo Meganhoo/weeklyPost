@@ -268,7 +268,7 @@ h1, h2, h3, h4, h5, h6{font-size:100%;font-weight: 500; margin: 0;}
 }
 .list-block .item-content {
     box-sizing: border-box;
-    padding-left: 0.75rem;
+    /* padding-left: 0.75rem; */
     /* min-height: 2.2rem; */
     display: -webkit-box;
     display: -webkit-flex;
